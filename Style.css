@@ -1,0 +1,132 @@
+:root {
+    --background: #100d20;
+    --magicbbll: #090811;
+    --secondarybackground: #211b35;
+    --purple: #a78bfa;
+    --darkpurple: #55256d;
+    --lightpurple: #d6bdff;
+    --blue: #5265c9;
+    --maintext: #f5eeff;
+    --secondarytext: #b8a9d7;
+    --glow: #7d8cfc;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   overflow-x: hidden;
+   min-height: 100vh;
+   background-color: var(--background);
+   color: var(--maintext);
+}
+
+body h1 {
+    color: var(--maintext);
+    font-size: 60px;
+}
+
+body h1:hover{
+    color: var(--glow);
+    transform: translateY(-5px)
+}
+
+body p {
+    color: var(--secondarytext);
+}
+
+#question {
+    outline: none;
+    width: 50%;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    padding: 14px 16px;
+    border-radius: 5px;
+    border: 1px solid var(--darkpurple);
+    background-color: var(--secondarybackground);
+    color: var(--glow);
+}
+
+#question:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 12px rgba(167, 139, 250, 0.25);
+
+}
+
+#question::placeholder {
+    color: var(--white);
+}
+
+.ask-btn {
+    font-weight: bold;
+    background-color: var(--purple);
+    color: var(--white);
+    border: none;
+    transition: 0.3s ease;
+    padding: 14px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.ask-btn:hover {
+    background-color: var(--lightpurple);
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.magic-ball {
+    height: 250px;
+    width: 250px;
+    background: radial-gradient(circle at 30% 25%, #393346, #17131f 55%, #050408);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 35px rgba(167, 139, 250, 0.15);
+    position: relative;
+}
+
+.ball-window { 
+    width: 95px;
+    height: 70px;
+    position: absolute;
+    background: linear-gradient(
+        145deg,
+        #6878e8,
+        #383a91
+    );
+
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    border-radius: 5px;
+
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.window-circle {
+    height: 125px;
+    width: 125px;
+    background: var(--secondarybackground);
+    border: 3px solid var(--background);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+#ball-answer {
+    text-shadow: 0 0 10px rgba(214, 189, 255, 0.7);
+    margin-top: 2px;
+    color: #f5eeff;
+    font-size: 35px;
+    font-weight: bold;
+}
