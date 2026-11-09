@@ -2,5 +2,26 @@
 <html lang ="en">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="Style.css">
+        <script src="script.js"></script>
+        <title>Magic 8 Ball</title>
     </head>
+
+    <body>
+        <h1>Magic 8 Ball</h1>
+        <p>The universe has an answer for you...</p>
+
+        <div class="magic-ball">
+            <div class= "window-circle">
+            <div class="ball-window">
+                <div id="ball-answer">8</div>
+            </div>
+          </div>
+         </div>
+
+        <p>What would you like to know?</p>
+        <input type="text" id="question" placeholder="Type your question...">
+        <button class="ask-btn" onclick="askQuestion()">Ask the Magic 8 Ball</button>
+
+    </body>
 </html>
