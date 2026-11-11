@@ -149,12 +149,15 @@ body p {
     position: absolute;
 }
 /* texto de la esfera*/
-#ball-answer {
+.ball-answer {
     text-shadow: 0 0 10px rgba(214, 189, 255, 0.7);
     margin-top: 2px;
     color: #f5eeff;
     font-size: 35px;
+    overflow-wrap: break-word;
     font-weight: bold;
+    text-align: center;
+    width: 70%
 }
 
 .large-ball {
@@ -174,7 +177,7 @@ body p {
 }
 
 .large-ball .ball-answer {
-    font-size: 35px;
+    font-size: 80px;
 }
 
 /*hacer animacion de la pelota*/
