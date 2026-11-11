@@ -1,5 +1,11 @@
 :root {
-    --background: #100d20;
+    --background: linear-gradient(
+        135deg,
+        #26172e,
+        #261333,
+        #3d1856,
+        #1e0d21
+    );
     --magicbbll: #090811;
     --secondarybackground: #211b35;
     --purple: #a78bfa;
@@ -19,7 +25,7 @@ body {
    justify-content: center;
    overflow-x: hidden;
    min-height: 100vh;
-   background-color: var(--background);
+   background: var(--background);
    color: var(--maintext);
 }
 
@@ -35,6 +41,9 @@ body h1:hover{
 
 body p {
     color: var(--secondarytext);
+}
+
+#home-page {
 }
 
 #question {
@@ -93,6 +102,10 @@ body p {
     position: relative;
 }
 
+.magic-ball:hover {
+    transform: translateY(-5px)
+}
+
 .ball-window { 
     width: 95px;
     height: 70px;
@@ -104,7 +117,7 @@ body p {
     );
 
     clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
-    border-radius: 5px;
+    border-radius: 5px; 
 
     align-items: center;
     justify-content: center;
@@ -129,4 +142,8 @@ body p {
     color: #f5eeff;
     font-size: 35px;
     font-weight: bold;
+}
+
+.answer.page {
+    
 }
