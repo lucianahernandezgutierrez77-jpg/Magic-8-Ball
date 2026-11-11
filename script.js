@@ -15,7 +15,7 @@ const answers = [
 const homePage = document.getElementById("home-page");
 const answerPage = document.getElementById("answer-page");
 const askButton = document.querySelector (".ask-btn");
-const questionInput = document.getElementById("question");
+const questionInput = document.getElementById("questionbox");
 const ballAnswer = document.getElementById("ball-answer");
 
 function askQuestion() {

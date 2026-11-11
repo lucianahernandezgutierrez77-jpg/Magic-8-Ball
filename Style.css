@@ -43,10 +43,20 @@ body p {
     color: var(--secondarytext);
 }
 
-#home-page {
+/*secciones diferentes*/
+#home-page,
+#answer-page  {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px 20px;
+
 }
 
-#question {
+#questionbox {
     outline: none;
     width: 50%;
     box-sizing: border-box;
@@ -60,7 +70,7 @@ body p {
     color: var(--glow);
 }
 
-#question:focus {
+#questionbox:focus {
     border-color: var(--purple);
     box-shadow: 0 0 12px rgba(167, 139, 250, 0.25);
 
@@ -89,6 +99,7 @@ body p {
     box-shadow: none;
 }
 
+/* magic 8 ball */
 .magic-ball {
     height: 250px;
     width: 250px;
@@ -106,6 +117,7 @@ body p {
     transform: translateY(-5px)
 }
 
+/* triangulo de la esfera */
 .ball-window { 
     width: 95px;
     height: 70px;
@@ -124,6 +136,7 @@ body p {
     display: flex;
 }
 
+/* bolita del fondo */
 .window-circle {
     height: 125px;
     width: 125px;
@@ -135,7 +148,7 @@ body p {
     justify-content: center;
     position: absolute;
 }
-
+/* texto de la esfera*/
 #ball-answer {
     text-shadow: 0 0 10px rgba(214, 189, 255, 0.7);
     margin-top: 2px;
@@ -144,6 +157,34 @@ body p {
     font-weight: bold;
 }
 
-.answer-page {
+.large-ball {
+    height: 500px;
+    width: 500px;
+}
 
+.large-ball .ball-window {
+    width: 175px;
+    height: 175px;
+    border-radius: 5px; 
+}
+
+.large-ball .window-circle{
+    height: 250px;
+    width: 250px;
+}
+
+.large-ball .ball-answer {
+    font-size: 35px;
+}
+
+/*hacer animacion de la pelota*/
+
+.maginc-ball-animation {
+    transform: translatey(-5px);
+    transform: translate3d(-8px);
+}
+
+/* hide home page */
+.hidden {
+    display: none !important;
 }
