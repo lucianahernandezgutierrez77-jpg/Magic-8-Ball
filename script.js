@@ -27,15 +27,15 @@ function askQuestion() {
         return;
     }
 
+    ballAnswer.textContent = "8";
+
     window.scrollTo(0,0);
 
     homePage.classList.add("hidden");
     answerPage.classList.remove("hidden");
 
-    ballAnswer.textContent = "8";
-
-    magicBall.classList.remove("shake");
-    void magicBall.offsetWidth;
+    remove("shake");
+    void magicBall.offsetagicBall.classList.rWidth;
     magicBall.classList.add("shake");
 
     magicBall.onanimationend = () => {
