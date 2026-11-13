@@ -168,16 +168,11 @@ body p {
 .large-ball .ball-window {
     width: 175px;
     height: 175px;
-    border-radius: 5px; 
 }
 
 .large-ball .window-circle{
     height: 250px;
     width: 250px;
-}
-
-.large-ball .ball-answer {
-    font-size: 15px;
 }
 
 /*hacer animacion de la pelota*/
@@ -187,17 +182,42 @@ body p {
 }
 
 @keyframes shake {
-    0%, 100% {
-        transform: rotate(0deg);
+    0% {
+        transform: rotate(0deg) translateX(0);
     }
 
-    25%, 75% {
-        transform: rotate(-15deg);
+    15% {
+        transform: rotate(-12deg) translateX(-8px);
     }
 
-    50% {
-        transform: rotate(15deg);
+    30% {
+        transform: rotate(12deg) translateX(8px);
     }
+
+    45% {
+        transform: rotate(-10deg) translateX(-6px);
+    }
+
+    60% {
+        transform: rotate(10deg) translateX(6px);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    90% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg) translateX(0);
+    }
+}
+
+/* hacer la animacion del triangulo */
+@keyframes ball-window {
+
 }
 
 /* hide home page */

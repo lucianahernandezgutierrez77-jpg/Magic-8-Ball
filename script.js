@@ -27,6 +27,9 @@ function askQuestion() {
         return;
     }
 
+    const randomIndex = Math.floor(Math.random() * answers.length);
+    const selectedAnswer = answers[randomIndex];
+
     ballAnswer.textContent = "8";
 
     window.scrollTo(0,0);
@@ -34,13 +37,14 @@ function askQuestion() {
     homePage.classList.add("hidden");
     answerPage.classList.remove("hidden");
 
-    remove("shake");
-    void magicBall.offsetagicBall.classList.rWidth;
-    magicBall.classList.add("shake");
+    magicBall.classList.remove("shake");
+    void magicBall.offsetwidth;
 
-    magicBall.onanimationend = () => {
-        ballAnswer.textContent = answers[Math.floor(Math.random() * answers.length)];
-        magicBall.classList.remove("shake");
-    };
+    magicBall.addEventListener("animationend", function handleShake(event) {
+        if (event.target !== magicBall) return;
+
+        ballAnswer.textContent = selectedAnswer;
+
+    },);
+    magicBall.classList.add("shake");
 }
-askButton.addEventListener("click", askQuestion);
