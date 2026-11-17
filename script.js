@@ -1,6 +1,20 @@
 
+const homePage = document.getElementById("home-page");
+const answerPage = document.getElementById("answer-page");
+const magicBall = document.querySelector(".large-ball")
+const askButton = document.querySelector (".ask-btn");
+const questionInput = document.getElementById("questionbox");
+const questionText = document.getElementById("question-text")
+const ballAnswer = document.querySelector("#answer-page .ball-answer");
+const againButton= document.getElementById("ask-again-btn");
+const shakeSound = document.getElementById("shake-sound");
+const bgMusic = document.getElementById("bg-music");
+
+
 const answers = [
     "It is certain",
+    "Most likely",
+    "It is decidedly so",
     "Without a doubt",
     "yes, definitely",
     "You may rely on it", 
@@ -9,15 +23,11 @@ const answers = [
     "Cannot predict now", 
     "Don't count on it", 
     "My sources say no",
-    "Very doubtful"
+    "Very doubtful",
+    "My reply is no",
+    "Outlook not so good",
+    "As I see it, yes",
 ];
-
-const homePage = document.getElementById("home-page");
-const answerPage = document.getElementById("answer-page");
-const magicBall = document.querySelector(".large-ball")
-const askButton = document.querySelector (".ask-btn");
-const questionInput = document.getElementById("questionbox");
-const ballAnswer = document.querySelector("#answer-page .ball-answer");
 
 function askQuestion() {
     const question = questionInput.value.trim();
@@ -27,10 +37,14 @@ function askQuestion() {
         return;
     }
 
+    questionText.textContent = `"${question}"`;
+
     const randomIndex = Math.floor(Math.random() * answers.length);
     const selectedAnswer = answers[randomIndex];
 
     ballAnswer.textContent = "8";
+    ballAnswer.classList.remove("has-answer"); 
+    againButton.classList.add("hidden"); // hide until the answer shows
     window.scrollTo(0,0);
 
     homePage.classList.add("hidden");
@@ -41,7 +55,29 @@ function askQuestion() {
 
     magicBall.addEventListener("animationend", () => {
         ballAnswer.textContent = selectedAnswer;
+        ballAnswer.classList.add("has-answer"); // small text
+        againButton.classList.remove("hidden");
     }, {once: true});
 
-    magicBall.classList.add("shake");
+    playSounds();                       
+    magicBall.classList.add("shake"); 
+}
+
+function playSounds() {
+    // music: starts once and keeps looping
+    if (bgMusic.paused) {
+        bgMusic.play().catch(err => console.log("music error:", err));
+    }
+
+    // shake sound: restart from the beginning every time
+    shakeSound.currentTime = 0;
+    shakeSound.play().catch(err => console.log("shake error:", err));
+}
+
+function askAgain() {
+    questionInput.value = ""; // clear the old question
+    answerPage.classList.add("hidden");
+    homePage.classList.remove("hidden");
+    window.scrollTo(0,0);
+    questionInput.focus(); // ready to type
 }

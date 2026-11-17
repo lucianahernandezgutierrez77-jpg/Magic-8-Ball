@@ -25,6 +25,7 @@
 
         <main id="answer-page" class="hidden">
             <h1>Your answer awaits...</h1>
+            <p id="question-text"></p>
             <div class="magic-ball large-ball">
                 <div class="window-circle">
                     <div class="ball-window">
@@ -32,7 +33,12 @@
                     </div>
                 </div>
             </div>
+
+            <button class="ask-btn hidden" id="ask-again-btn" onclick="askAgain()">Ask again</button>
+
         </main>
+        <audio id="shake-sound" src="Sounds/shake.mp3" preload="auto"></audio>
+        <audio id="bg-music" src="Sounds/music.mp3" loop preload="auto"></audio>
         <script src="script.js"></script>
     </body>
 </html>

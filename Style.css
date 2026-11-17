@@ -16,11 +16,13 @@
     --maintext: #f5eeff;
     --secondarytext: #b8a9d7;
     --glow: #7d8cfc;
+    --secondaryglow: #7dd3fc;
 }
 
 body {
    font-family: Arial, sans-serif;
    display: flex;
+   margin: 0;
    flex-direction: column;
    align-items: center;
    justify-content: center;
@@ -31,11 +33,12 @@ body {
 }
 
 body h1 {
-    color: var(--maintext);
-    font-size: 60px;
+    color: var(--lightpurple);
+    font-size: 75px;
     text-shadow: 0 0 20px rgba(125, 140, 252, 0.4);
     letter-spacing: 2px;
     transition: 0.3 ease;
+    margin: -15px;
 }
 
 body h1:hover{
@@ -92,20 +95,24 @@ body p {
     border: none;
     transition: 0.3s ease;
     padding: 14px 30px;
+    box-shadow: 0 0 18px rgba(167, 139, 250, 0.135);
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 15px;
+    margin-top: 0px;
 }
 
 .ask-btn:hover {
     background-color: var(--lightpurple);
     transform: translateY(0);
-    box-shadow: none;
+    box-shadow: 0 0 25px rgba(214, 189, 255, 0.5);
 }
 
 #home-page .magic-ball {
     animation: float 4s ease-in-out infinite;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2)
+    , 0 0 60px 10px rgba(125, 140, 252, 0.2)
+    , 0 0 140px 40px rgba(167, 139, 250, 0.5);   
 }
 
 @keyframes float {
@@ -127,7 +134,6 @@ body p {
     position: relative;
 }
 
-/*definir que hacer con esto*/
 .magic-ball:hover {
     transform: translateY(-5px)
 }
@@ -189,14 +195,23 @@ body p {
 }
 
 .large-ball .ball-answer {
+    font-size: 60px;
     padding: 16px 22% 0;
-    font-size: 24px;
+
+}
+
+.large-ball .ball-answer.has-answer {
+    font-size: 22px;
 }
 
 /*hacer animacion de la pelota*/
 
 .shake {
     animation: shake 0.8s ease-in-out;
+}
+
+.shake .ball-window {
+    animation: ball-window 0.8s ease-in-out;
 }
 
 @keyframes shake {
@@ -235,7 +250,40 @@ body p {
 
 /* hacer la animacion del triangulo */
 @keyframes ball-window {
+ 0% { transform: scale(1); filter: brightness(1);}
+ 30% {transform: scale(0.8); filter: brightness(1,6);}
+ 60% {transform: scale(0.8); filter: brightness(1.6);}
+ 100% {transform: scale(1); filter: brightness(1);}
+}
 
+#question-text {
+    font-style: italic;
+    margin: -10px 0 0;
+    max-width: 450px;
+    text-align: center;
+    font-size: 20px;
+    overflow-wrap: break-word;
+}
+
+#answer-page:has(.shake) #question-text {
+    animation: question-glow 0.8s ease-in-out both;
+}
+
+@keyframes question-glow {
+    0% {
+        color: var(--secondarytext);
+        text-shadow: none;
+        transform: translateY(10px);
+    }
+
+    50% {
+        text-shadow: 0 0 12px var(--secondaryglow), 0 0 24px var(--glow);
+    }
+
+    100% {
+        text-shadow: 0 0 10px rgba(214, 189, 255, 0.7);
+        transform: translateY(0);
+    }
 }
 
 /* hide home page */
