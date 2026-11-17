@@ -17,7 +17,7 @@ const answerPage = document.getElementById("answer-page");
 const magicBall = document.querySelector(".large-ball")
 const askButton = document.querySelector (".ask-btn");
 const questionInput = document.getElementById("questionbox");
-const ballAnswer = document.querySelector(".ball-answer");
+const ballAnswer = document.querySelector("#answer-page .ball-answer");
 
 function askQuestion() {
     const question = questionInput.value.trim();
@@ -31,20 +31,17 @@ function askQuestion() {
     const selectedAnswer = answers[randomIndex];
 
     ballAnswer.textContent = "8";
-
     window.scrollTo(0,0);
 
     homePage.classList.add("hidden");
     answerPage.classList.remove("hidden");
 
     magicBall.classList.remove("shake");
-    void magicBall.offsetwidth;
+    void magicBall.offsetWidth;
 
-    magicBall.addEventListener("animationend", function handleShake(event) {
-        if (event.target !== magicBall) return;
-
+    magicBall.addEventListener("animationend", () => {
         ballAnswer.textContent = selectedAnswer;
+    }, {once: true});
 
-    },);
     magicBall.classList.add("shake");
 }
