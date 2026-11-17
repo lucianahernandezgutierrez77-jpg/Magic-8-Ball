@@ -49,6 +49,7 @@ function askQuestion() {
 
     homePage.classList.add("hidden");
     answerPage.classList.remove("hidden");
+    bgMusic.pause();
 
     magicBall.classList.remove("shake");
     void magicBall.offsetWidth;
@@ -64,15 +65,18 @@ function askQuestion() {
 }
 
 function playSounds() {
-    // music: starts once and keeps looping
-    if (bgMusic.paused) {
-        bgMusic.play().catch(err => console.log("music error:", err));
-    }
-
-    // shake sound: restart from the beginning every time
     shakeSound.currentTime = 0;
-    shakeSound.play().catch(err => console.log("shake error:", err));
+    shakeSound.play().catch(() => {});
 }
+
+function playMusic() {
+    if (!homePage.classList.contains("hidden")) {
+        bgMusic.play().catch(() => {});
+    }
+}
+
+document.addEventListener("click", playMusic, { once: true});
+document.addEventListener("keydown",playMusic, {once: true});
 
 function askAgain() {
     questionInput.value = ""; // clear the old question
@@ -80,4 +84,5 @@ function askAgain() {
     homePage.classList.remove("hidden");
     window.scrollTo(0,0);
     questionInput.focus(); // ready to type
+    playMusic();
 }
