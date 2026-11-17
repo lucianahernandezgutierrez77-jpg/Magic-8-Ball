@@ -57,8 +57,9 @@ body p {
 }
 
 #questionbox {
+    text-align: center;
     outline: none;
-    width: 50%;
+    width: 450px;
     box-sizing: border-box;
     transition: 0.3s ease;
     font-size: 16px;
