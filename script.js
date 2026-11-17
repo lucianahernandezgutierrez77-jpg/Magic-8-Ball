@@ -1,4 +1,4 @@
-
+// grabbing everything I need from the page
 const homePage = document.getElementById("home-page");
 const answerPage = document.getElementById("answer-page");
 const magicBall = document.querySelector(".large-ball")
@@ -10,7 +10,7 @@ const againButton= document.getElementById("ask-again-btn");
 const shakeSound = document.getElementById("shake-sound");
 const bgMusic = document.getElementById("bg-music");
 
-
+// every possible answer the ball can give
 const answers = [
     "It is certain",
     "Most likely",
@@ -32,6 +32,7 @@ const answers = [
 function askQuestion() {
     const question = questionInput.value.trim();
 
+    // don't let people ask an empty question
     if (question === "") {
         alert("Please enter a question!!");
         return;
@@ -42,9 +43,10 @@ function askQuestion() {
     const randomIndex = Math.floor(Math.random() * answers.length);
     const selectedAnswer = answers[randomIndex];
 
+    // reset the ball back to the big 8 before shaking
     ballAnswer.textContent = "8";
     ballAnswer.classList.remove("has-answer"); 
-    againButton.classList.add("hidden"); // hide until the answer shows
+    againButton.classList.add("hidden");
     window.scrollTo(0,0);
 
     homePage.classList.add("hidden");
@@ -54,9 +56,10 @@ function askQuestion() {
     magicBall.classList.remove("shake");
     void magicBall.offsetWidth;
 
+    // when the shake ends, reveal the answer and the "ask again" button
     magicBall.addEventListener("animationend", () => {
         ballAnswer.textContent = selectedAnswer;
-        ballAnswer.classList.add("has-answer"); // small text
+        ballAnswer.classList.add("has-answer"); // switches to the small text
         againButton.classList.remove("hidden");
     }, {once: true});
 

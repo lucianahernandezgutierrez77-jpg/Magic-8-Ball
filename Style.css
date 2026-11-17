@@ -41,6 +41,7 @@ body h1 {
     margin: -15px;
 }
 
+/* title lifts and glows blue on hover */
 body h1:hover{
     color: var(--glow);
     transform: translateY(-5px)
@@ -50,7 +51,7 @@ body p {
     color: var(--secondarytext);
 }
 
-/*secciones diferentes*/
+/* both pages are full-screen columns with the content centered */
 #home-page,
 #answer-page  {
     min-height: 100vh;
@@ -78,6 +79,7 @@ body p {
     color: var(--glow);
 }
 
+/* soft purple glow while typing */
 #questionbox:focus {
     border-color: var(--purple);
     box-shadow: 0 0 12px rgba(167, 139, 250, 0.25);
@@ -102,6 +104,7 @@ body p {
     margin-top: 0px;
 }
 
+/* lighter color and a stronger glow on hover */
 .ask-btn:hover {
     background-color: var(--lightpurple);
     transform: translateY(0);
@@ -138,7 +141,7 @@ body p {
     transform: translateY(-5px)
 }
 
-/* triangulo de la esfera */
+/* the blue triangle */
 .ball-window { 
     width: 95px;
     height: 70px;
@@ -151,7 +154,7 @@ body p {
     );
 }
 
-/* bolita del fondo */
+/* the dark circle behind the triangle */
 .window-circle {
     height: 125px;
     width: 125px;
@@ -163,7 +166,8 @@ body p {
     justify-content: center;
     position: absolute;
 }
-/* texto de la esfera*/
+
+/* text inside the triangle*/
 .ball-answer {
     text-shadow: 0 0 10px rgba(214, 189, 255, 0.7);
     color: #f5eeff; 
@@ -204,8 +208,7 @@ body p {
     font-size: 22px;
 }
 
-/*hacer animacion de la pelota*/
-
+/* the JS adds this class to shake the ball */
 .shake {
     animation: shake 0.8s ease-in-out;
 }
@@ -262,7 +265,7 @@ body p {
     max-width: 450px;
     text-align: center;
     font-size: 20px;
-    overflow-wrap: break-word;
+    overflow-wrap: break-word; /* long words wrap instead of overflowing */
 }
 
 #answer-page:has(.shake) #question-text {
@@ -286,7 +289,7 @@ body p {
     }
 }
 
-/* hide home page */
+/* the JS uses this to switch between pages */
 .hidden {
     display: none !important;
 }
