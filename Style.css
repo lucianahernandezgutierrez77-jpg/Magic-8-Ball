@@ -33,6 +33,9 @@ body {
 body h1 {
     color: var(--maintext);
     font-size: 60px;
+    text-shadow: 0 0 20px rgba(125, 140, 252, 0.4);
+    letter-spacing: 2px;
+    transition: 0.3 ease;
 }
 
 body h1:hover{
@@ -101,6 +104,15 @@ body p {
     box-shadow: none;
 }
 
+#home-page .magic-ball {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    50% { transform: translateY(-20px);}
+    0%, 100% { transform: translateY(0);}
+}
+
 /* magic 8 ball */
 .magic-ball {
     height: 250px;
@@ -116,7 +128,7 @@ body p {
 }
 
 /*definir que hacer con esto*/
-.magic-ball2:hover {
+.magic-ball:hover {
     transform: translateY(-5px)
 }
 
