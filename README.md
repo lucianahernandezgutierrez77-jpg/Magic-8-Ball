@@ -18,6 +18,12 @@ I chose the Magic 8 Ball because it was a fun way to experiment with animations,
 
 I built it using HTML, CSS and JavaScript together, mostly animations, switching between pages and adding sound. There are no libraries, just plain code, so it runs easily.
 
+## Thoughts
+
+The main goal of this project was to get more comfortable with HTML, CSS, and JavaScript by building something from scratch. It gave me a chance to try out new things, make mistakes, and learn how to bring a simple idea to life through code.
+
+It was a good experience, and I'd like to keep experimenting with JavaScript, building more projects like this, and eventually taking on more complex ones.
+
 ## Run it 
 
 The project is hosted with GitHub Pages at https://lucianahernandezgutierrez77-jpg.github.io/Magic-8-Ball/
