@@ -11,10 +11,10 @@ I chose the Magic 8 Ball because it was a fun way to experiment with animations,
 
 ## Features
 
--- Random answers
--- Ball shaking animations
--- Sound effects
--- Different screens and transitions
+- Random answers
+- Ball shaking animations
+- Sound effects
+- Different screens and transitions
 
 I built it using HTML, CSS and JavaScript together, mostly animations, switching between pages and adding sound. There are no libraries, just plain code, so it runs easily.
 
